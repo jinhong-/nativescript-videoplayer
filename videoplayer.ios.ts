@@ -89,6 +89,8 @@ export class Video extends common.Video {
 
     private AVPlayerItemDidPlayToEndTimeNotification(notification: any) {
         var notificationString = notification.toString();
+        console.log(notificationString);
+        console.log(source);
         var source = this.src.replace("~","");
         // Check if src exists in notification, notification is structured liek so: NSConcreteNotification 0x61000024f690 {name = AVPlayerItemDidPlayToEndTimeNotification; object = <AVPlayerItem: 0x600000204190, asset = <AVURLAsset: 0x60000022b7a0, URL = https://clips.vorwaerts-gmbh.de/big_buck_bunny.mp4>>}
         if (notificationString.includes(source)) {
